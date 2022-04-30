@@ -1,1 +1,55 @@
-<p>signup works!</p>
+<div class="main_component">
+    <div class="div-flex">
+        <h1>Register an account!</h1>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <div>
+                <label for="email">Email: </label>
+                <input type="text" formControlName="email" />
+            </div>
+            <div>
+                <label for="password">Jelszó: </label>
+                <input type="password" formControlName="password" />
+            </div>
+            <div>
+                <label for="rePassword">Jelszó megerősítése: </label>
+                <input type="password" formControlName="rePassword" />
+            </div>
+            <div formGroupName="name">
+                <div>
+                    <label for="firstname">Vezeték név: </label>
+                    <input type="text" formControlName="firstname" />
+                </div>
+                <div>
+                    <label for="firstname">Kereszt név: </label>
+                    <input type="text" formControlName="lastname" />
+                </div>
+            </div>
+            <div>
+                <label for="phoneNumber">Telefon szám: </label>
+                <input type="text" formControlName="phoneNumber" />
+            </div>
+            <div formGroupName="address">
+                <div>
+                    <label for="ZIPcode">Irányítószám: </label>
+                    <input type="text" formControlName="ZIPcode" />
+                </div>
+                <div>
+                    <label for="town">Város: </label>
+                    <input type="text" formControlName="town" />
+                </div>
+                <div>
+                    <label for="street">Utca: </label>
+                    <input type="text" formControlName="street" />
+                </div>
+                <div>
+                    <label for="houseNumber">Ház szám: </label>
+                    <input type="text" formControlName="houseNumber" />
+                </div>
+            </div>
+            <div>
+                <button type="submit">Register</button>
+                <button (click)="goBack()">Back</button>
+            </div>
+        </form>
+    </div>
+</div>
