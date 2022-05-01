@@ -1,55 +1,60 @@
 <div class="main_component">
     <div class="div-flex">
         <h1>Register an account!</h1>
+        
         <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-            <div>
-                <label for="email">Email: </label>
-                <input type="text" formControlName="email" />
-            </div>
-            <div>
-                <label for="password">Jelszó: </label>
-                <input type="password" formControlName="password" />
-            </div>
-            <div>
-                <label for="rePassword">Jelszó megerősítése: </label>
-                <input type="password" formControlName="rePassword" />
-            </div>
-            <div formGroupName="name">
+            <section>
+                    <mat-form-field appearance="fill">
+                    <mat-label for="email">Email: </mat-label>
+                    <input matInput type="text" formControlName="email" />
+                </mat-form-field>
                 <div>
-                    <label for="firstname">Vezeték név: </label>
-                    <input type="text" formControlName="firstname" />
+                    <label for="password">Jelszó: </label>
+                    <input type="password" formControlName="password" />
                 </div>
                 <div>
-                    <label for="firstname">Kereszt név: </label>
-                    <input type="text" formControlName="lastname" />
+                    <label for="rePassword">Jelszó megerősítése: </label>
+                    <input type="password" formControlName="rePassword" />
                 </div>
-            </div>
-            <div>
-                <label for="phoneNumber">Telefon szám: </label>
-                <input type="text" formControlName="phoneNumber" />
-            </div>
-            <div formGroupName="address">
-                <div>
-                    <label for="ZIPcode">Irányítószám: </label>
-                    <input type="text" formControlName="ZIPcode" />
-                </div>
-                <div>
-                    <label for="town">Város: </label>
-                    <input type="text" formControlName="town" />
+                <div formGroupName="name">
+                    <div>
+                        <label for="firstname">Vezeték név: </label>
+                        <input type="text" formControlName="firstname" />
+                    </div>
+                    <div>
+                        <label for="firstname">Kereszt név: </label>
+                        <input type="text" formControlName="lastname" />
+                    </div>
                 </div>
                 <div>
-                    <label for="street">Utca: </label>
-                    <input type="text" formControlName="street" />
+                    <label for="phoneNumber">Telefon szám: </label>
+                    <input type="text" formControlName="phoneNumber" />
                 </div>
-                <div>
-                    <label for="houseNumber">Ház szám: </label>
-                    <input type="text" formControlName="houseNumber" />
+                <div formGroupName="address">
+                    <div>
+                        <label for="ZIPcode">Irányítószám: </label>
+                        <input type="text" formControlName="ZIPcode" />
+                    </div>
+                    <div>
+                        <label for="town">Város: </label>
+                        <input type="text" formControlName="town" />
+                    </div>
+                    <div>
+                        <label for="street">Utca: </label>
+                        <input type="text" formControlName="street" />
+                    </div>
+                    <div>
+                        <label for="houseNumber">Ház szám: </label>
+                        <input type="text" formControlName="houseNumber" />
+                    </div>
                 </div>
-            </div>
-            <div>
-                <button type="submit">Register</button>
-                <button (click)="goBack()">Back</button>
-            </div>
+         </section>
+            <section>
+                <div class="button">
+                    <button mat-stroked-button type="submit">Register</button>
+                    <button mat-stroked-button (click)="goBack()">Back</button>
+                </div>
+            </section>
         </form>
     </div>
 </div>

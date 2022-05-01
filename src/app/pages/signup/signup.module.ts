@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SignupRoutingModule } from './signup-routing.module';
 import { SignupComponent } from './signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 
@@ -17,6 +18,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     SignupRoutingModule, 
     ReactiveFormsModule,
     MatFormFieldModule,
+    MatButtonModule,
+    
   ]
 })
 export class SignupModule { }

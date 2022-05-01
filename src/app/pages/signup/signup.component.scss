@@ -1,0 +1,16 @@
+section {
+    display: table;
+    position: relative;
+  }
+  
+  
+  .button {
+    display: table-cell;
+    width: 490px;
+  }
+  :host {
+    display: table-cell;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
