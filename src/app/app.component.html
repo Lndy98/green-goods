@@ -1,13 +1,30 @@
-<mat-card>
-<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-toolbar>
+<button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>    
+</button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
+      <button mat-menu-item *ngIf="loggedInUser" routerLink="/mypage">
+          <span>Profil</span>
+        </button>
+      <button mat-menu-item *ngIf="loggedInUser" routerLink="/login" (click)="logout()">
+          <span>Kijelentkezés</span>
+        </button>
+        <button mat-menu-item *ngIf="!(loggedInUser)" routerLink="/login">
+          <span>Bejelentkezés</span>
+        </button>
+        <button mat-menu-item *ngIf="!(loggedInUser)" routerLink="/signup">
+          <span>Regisztráció</span>
+        </button>
     </mat-menu>
-<button mat-button onclick="goToOrder">Kosár</button>
-<button mat-button onclick="goToOrder">Home</button>
-<button mat-button onclick="goToOrder">MyPage</button>
-</mat-card>
+<button mat-icon-button *ngIf="loggedInUser" routerLink="/shoppingcart">
+    <mat-icon>shopping_cart</mat-icon>
+</button>
+<button mat-icon-button color="primary" routerLink="/home">
+    <mat-icon>home</mat-icon>
+  </button>
+</mat-toolbar>
 <div>
-<router-outlet></router-outlet>
+  <mat-card>
+    <router-outlet></router-outlet>
+  </mat-card>
 </div>

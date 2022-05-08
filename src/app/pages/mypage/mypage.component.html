@@ -1,1 +1,15 @@
-<p>mypage works!</p>
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Adatok">
+    <mat-list>
+        <mat-list-item>Email cím:  {{actualUser?.email}} </mat-list-item>
+        <mat-divider> </mat-divider>
+        <mat-list-item>Telefonszám: {{actualUser?.phoneNumber}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Név:  {{actualUser?.name?.lastname}}  {{actualUser?.name?.firstname}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Cím: {{actualUser?.address?.ZIPcode}}, {{actualUser?.address?.town}}  {{actualUser?.address?.street}} {{actualUser?.address?.houseNumber}}</mat-list-item>
+      </mat-list>
+    </mat-tab>
+    <mat-tab label="Rendelések">Hello</mat-tab>
+</mat-tab-group>
+    

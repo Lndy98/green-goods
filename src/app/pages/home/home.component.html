@@ -1,1 +1,15 @@
 <p>home works!</p>
+<ng-container *ngFor="let product of productsObject" >
+    <div class="container">
+        <div> 
+            <img class="image" [src]="product.image" />
+        </div>
+        <div class="break"></div>
+        <div class="data">
+            <div class="productName">   {{product.name}}     </div>
+            <div class="productPrice">{{product.price}}</div>
+            <button (click)="addToCart(product.id)">Kosárba</button>
+        </div>  
+        <div class="break"></div>
+    </div>
+</ng-container>

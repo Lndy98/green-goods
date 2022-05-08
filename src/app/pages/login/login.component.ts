@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { AuthService } from '../../shared/services/auth.service'
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,19 +10,23 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  email = new FormControl('');
-  password = new FormControl('');
+  signUpForm = new FormGroup({
+    email : new FormControl(''),
+    password : new FormControl(''),
+  });
+  
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   login() {
-    if (this.email.value === 'test@gmail.com' && this.password.value === 'testpw') {
+    this.authService.login(this.signUpForm.get('email')?.value, this.signUpForm.get('password')?.value).then(cred=>{
+      console.log(cred)
       this.router.navigateByUrl('/home');
-    } else {
-      console.error('Incorrect email or password!');
-    }
+    }).catch(error=>{
+      console.error(error);
+    })
   }
 }

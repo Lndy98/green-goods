@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "green-goods-e293d": {
+      "hosting": {
+        "green-goods": [
+          "green-goods-e293d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "green-goods-e293d"
+  }
+}

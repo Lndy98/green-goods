@@ -3,4 +3,10 @@
     width: 100%!important;
   }
 
- 
+  ::ng-deep .mat-card {
+    border: 50px;
+  }
+
+  div{
+    margin: 20px;
+  }

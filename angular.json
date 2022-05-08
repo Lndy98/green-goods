@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "green-goods:build:production",
+            "firebaseProject": "green-goods-e293d",
+            "firebaseHostingSite": "green-goods-e293d"
+          }
         }
       }
     }

@@ -1,1 +1,21 @@
-<p>shopping-cart works!</p>
+<div *ngIf="products">
+    <mat-list >
+        <div class="container" *ngFor="let product of products">
+            <mat-list-item class="productName"> 
+                <div >{{ product.name }}    </div>
+                <div >    {{ product.price }}</div>
+            </mat-list-item>
+        </div>  
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            Végösszeg: {{ price }}
+        </mat-list-item>
+    </mat-list>
+</div>
+<div *ngIf="!products">
+    <mat-list >
+        <mat-list-item>
+            A kosarad még üres
+        </mat-list-item>
+    </mat-list>
+</div>
